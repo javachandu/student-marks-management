@@ -1,0 +1,66 @@
+<div th:replace="shared/header"></div>
+<div sec:authorize="isAuthenticated()" class="text-center">
+    <h1>Welcome <b><span sec:authentication="name">Username</span>
+    <span sec:authentication="principal.authorities">Roles</span></h1>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="logout">
+        </form>
+</div>
+<h1 class="text-center">Student Details</h1>
+<div class="container p-6">
+    <div class="pull-right">
+        <a sec:authorize="hasAuthority('admin')" href="/student/create">
+            <span class="btn btn-primary">
+                <span class="glyphicon glyphicon-plus"></span>
+            </span>
+        </a>
+       
+    </div>
+    <th:block th:if="${#lists.isEmpty(students)}">
+        <h3>No Students</h3>
+    </th:block>
+
+    <th:block th:unless="${#lists.isEmpty(students)}">
+        <div class="row">
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th rowspan="2">Id</th>
+                    <th rowspan="2">Roll No</th>
+                    <th rowspan="2">Full Name</th>
+                    <th rowspan="2">Department</th>
+                    <th colspan="4">First Mid Marks</th>
+                    <th colspan="4">Second Mid Marks</th>
+                    <th rowspan="2">Edit</th>
+                    <th rowspan="2">Delete</th>
+                </tr>
+                <tr>
+                    <th>Q1</th><th>Q2</th><th>Q3</th><th>Total</th>
+                    <th>Q1</th><th>Q2</th><th>Q3</th><th>Total</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="contact,iterStat : ${students}">
+                    <td th:text="${iterStat.count}"></td>
+                    <td th:text="${contact.rollNo}"></td>
+                    <td th:text="${contact.name}"></td>
+                    <td th:text="${contact.department}"></td>
+                    <td th:text="${contact.qone}"></td>
+                    <td th:text="${contact.qtwo}"></td>
+                    <td th:text="${contact.qthree}"></td>
+                    <td th:text="${contact.firstMidMarks}"></td>
+                    <td th:text="${contact.qfour}"></td>
+                    <td th:text="${contact.qfive}"></td>
+                    <td th:text="${contact.qsix}"></td>
+                    <td th:text="${contact.secondMidMarks}"></td>
+                    <td><a th:href="@{/student/{id}/edit(id=${contact.id})}"><span
+                            class="glyphicon glyphicon-pencil"></span></a></td>
+                    <td><a th:href="@{/student/{id}/delete(id=${contact.id})}"><span
+                            class="glyphicon glyphicon-trash"></span></a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </th:block>
+</div>
+<div th:replace="shared/footer"></div>
