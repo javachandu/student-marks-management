@@ -53,11 +53,11 @@ public class StudentController {
 
     @GetMapping(value = "/create")
     public String create(){
-        return "/student/table";
+        return "student/table";
     }
 
     @GetMapping(value = "/error")
     public String errorpage(){
-        return "/student/error";
+        return "student/error";
     }
 }

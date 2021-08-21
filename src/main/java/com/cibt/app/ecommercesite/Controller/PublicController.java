@@ -20,6 +20,6 @@ public class PublicController {
     @GetMapping(value = "/find")
     public String findById(@RequestParam ("rollNo")String rollNo, Model model){
         model.addAttribute("students", studentRepository.findByRollNo(rollNo));
-        return "/public/studentDetails";
+        return "public/studentDetails";
     }
 }
