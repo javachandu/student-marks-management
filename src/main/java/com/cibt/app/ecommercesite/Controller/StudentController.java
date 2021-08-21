@@ -21,7 +21,7 @@ public class StudentController {
     @GetMapping()
     public String index(Model model){
         model.addAttribute("students", studentRepository.findAll());
-        return "/student/index";
+        return "student/index";
     }
 
     @GetMapping(value = "/json")
@@ -34,7 +34,7 @@ public class StudentController {
     @GetMapping(value = "/delete/{id}")
     public String delete(@PathVariable("id")int id){
         studentRepository.deleteById(id);
-        return "redirect:/product?success";
+        return "redirect:student?success";
     }
 
     @GetMapping(value = "/edit/{id}")
@@ -42,13 +42,13 @@ public class StudentController {
      Model model){
 
        model.addAttribute("products", studentRepository.findById(id).get());
-        return "/product/edit";
+        return "student/edit";
     }
 
     @PostMapping()
     public String save(Student product){
         studentRepository.save(product);
-        return "redirect:/student?success";
+        return "redirect:student?success";
     }
 
     @GetMapping(value = "/create")
