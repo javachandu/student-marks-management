@@ -1,84 +1,62 @@
 <div th:replace="shared/header"></div>
-<div class="container">
-    <form action="/student" method="post">
-        <table style="margin-left: auto;margin-right: auto;">
-            <tr>
-                <td style="padding-right: 200px">
-                    <div class="form-group">
+<div th:replace="shared/sidebar"></div>
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <h2>Student Registration</h2>
+            <form action="/student" method="post">
+                <div class="form-row">
+                    <div class="col-md-6 form-group">
                         <label>RollNo</label>
-                        <input type="text" class="form-control"
-                               name ="rollNo" />
+                        <input type="text" class="form-control" name ="rollNo" />
                     </div>
-                </td>
-                <td>
-                    <div class="form-group">
+                    <div class="col-md-6 form-group">
                         <label>Name</label>
-                        <input type="text" class="form-control"
-                               name ="name" />
+                        <input type="text" class="form-control" name ="name" />
                     </div>
-                </td>
-            </tr>
-<tr>
-    <td style="padding-right: 200px">
-        <div class="form-group">
-            <label>Department</label>
-            <input type="text" class="form-control" name ="department" />
-        </div>
-    </td>
-    <td>
-        <div class="form-group">
-            <label>First Mid Question-1</label>
-            <input type="text" class="form-control" name ="qone" />
-        </div>
-    </td>
-</tr>
-<tr>
-    <td style="padding-right: 200px">
-        <div class="form-group">
-            <label>First Mid Question-2</label>
-            <input type="text" class="form-control" name ="qtwo" />
-        </div>
-    </td>
-    <td>
-        <div class="form-group">
-            <label>First Mid Question-3</label>
-            <input type="text" class="form-control" name ="qthree" />
-        </div>
-    </td>
-</tr>
-       <tr>
-           <td style="padding-right: 200px">
-               <div class="form-group">
-                   <label>Second Mid Question-1</label>
-                   <input type="text" class="form-control" name ="qfour" />
-               </div>
-           </td>
-           <td>
-               <div class="form-group">
-                   <label>Second Mid Question-1</label>
-                   <input type="text" class="form-control" name ="qfour" />
-               </div>
-           </td>
-       </tr>
-            <tr>
-                <td style="padding-right: 200px">
-                    <div class="form-group">
+                    <div class="col-md-6 form-group">
+                        <label>Phone</label>
+                        <input type="text" class="form-control" name ="" />
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Department</label>
+                        <select class="form-control" name="department">
+                            <option value="">Choose...</option>
+                            <option value="IT">Mechanical</option>
+                            <option value="HR">IT</option>
+                            <option value="Sale">Civil</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>First Mid Question-1</label>
+                        <input type="number" step="any" class="form-control" name="qone">
+                    </div>
+
+                    <div class="col-md-6 form-group">
+                        <label>First Mid Question-2</label>
+                        <input type="text" class="form-control" name ="qtwo" />
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>First Mid Question-3</label>
+                        <input type="text" class="form-control" name ="qthree" />
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Second Mid Question-1</label>
+                        <input type="text" class="form-control" name ="qfour" />
+                    </div>
+                    <div class="col-md-6 form-group">
                         <label>Second Mid Question-2</label>
                         <input type="text" class="form-control" name ="qfive" />
                     </div>
-                </td>
-                <td>
-                    <div class="form-group">
+                    <div class="col-md-6 form-group">
                         <label>Second Mid Question-3</label>
                         <input type="text" class="form-control" name ="qsix" />
                     </div>
-                </td>
-            </tr>
-        <div>
-            <button type="submit" class="btn btn-primary">Save</button>
-            <a href="/"> <span class="btn btn-default">Back</span></a>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block mt-3">Save</button>
+            </form>
         </div>
-        </table>
-    </form>
+    </div>
 </div>
+
 <div th:replace="shared/footer"></div>

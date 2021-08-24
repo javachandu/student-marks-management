@@ -1,4 +1,5 @@
 <div th:replace="shared/header"></div>
+<div th:replace="shared/sidebar"></div>
 <div sec:authorize="isAuthenticated()" class="text-center">
     <h1>Welcome <b><span sec:authentication="name">Username</span>
     <span sec:authentication="principal.authorities">Roles</span></h1>

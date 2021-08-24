@@ -46,8 +46,10 @@ public class StudentController {
     }
 
     @PostMapping()
-    public String save(Student product){
-        studentRepository.save(product);
+    public String save(Student student){
+        student.setFirstMidMarks(student.getQone()+student.getQtwo()+student.getQthree());
+        student.setSecondMidMarks(student.getQfour()+student.getQfive()+student.getQsix());
+        studentRepository.save(student);
         return "redirect:student?success";
     }
 
