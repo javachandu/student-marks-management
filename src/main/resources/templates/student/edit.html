@@ -1,22 +1,62 @@
 <div th:replace="shared/header"></div>
 <div th:replace="shared/sidebar"></div>
-<div class="container">
-    <form action="/product" method="post">
-        <div class="form-group">
-            <label>Name</label>
-            <input type="text" name="name" th:value="${products.name}" class="form-control">
-        </div>
-        <div class="form-group">
-            <label>Price</label>
-            <input type="text" name="price" th:value="${products.price}" class="form-control">
-        </div>
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <h2>Update Student Details</h2>
+            <form action="#" th:action="@{/student}" method="post" th:object="${student}">
+        <div class="form-row">
+            <div class="col-md-6 form-group">
+                <label>RollNo</label>
+                <input type="text" class="form-control" th:field="*{rollNo}"/>
+            </div>
+            <div class="col-md-6 form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" th:field="*{name}" />
+            </div>
+            <div class="col-md-6 form-group">
+                <label>Phone</label>
+                <input type="text" class="form-control" name ="" />
+            </div>
+            <div class="col-md-6 form-group">
+                <label>Department</label>
+                <select class="form-control" th:field="*{department}">
+                    <option value="">Choose...</option>
+                    <option value="IT">Mechanical</option>
+                    <option value="HR">IT</option>
+                    <option value="Sale">Civil</option>
+                </select>
+            </div>
+            <div class="col-md-6 form-group">
+                <label>First Mid Question-1</label>
+                <input type="number" step="any" class="form-control" th:field="*{qone}">
+            </div>
 
-        <div>
-            <input type="hidden" th:value="${products.id}" name="id">
-            <button type="submit" class="btn btn-primary">Save</button>
-            <a href="/product"> <span class="btn btn-default">Back</span></a>
+            <div class="col-md-6 form-group">
+                <label>First Mid Question-2</label>
+                <input type="text" class="form-control" th:field="*{qtwo}" />
+            </div>
+            <div class="col-md-6 form-group">
+                <label>First Mid Question-3</label>
+                <input type="text" class="form-control" th:field="*{qthree}" />
+            </div>
+            <div class="col-md-6 form-group">
+                <label>Second Mid Question-1</label>
+                <input type="text" class="form-control" th:field="*{qfour}" />
+            </div>
+            <div class="col-md-6 form-group">
+                <label>Second Mid Question-2</label>
+                <input type="text" class="form-control" th:field="*{qfive}" />
+            </div>
+            <div class="col-md-6 form-group">
+                <label>Second Mid Question-3</label>
+                <input type="text" class="form-control" th:field="*{qsix}" />
+            </div>
         </div>
-
+        <input type="hidden" th:field="*{id}">
+        <button type="submit" class="btn btn-primary btn-block mt-3">Update</button>
     </form>
+        </div>
+    </div>
 </div>
 <div th:replace="shared/footer"></div>

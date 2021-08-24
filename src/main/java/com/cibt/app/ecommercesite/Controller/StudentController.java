@@ -34,14 +34,13 @@ public class StudentController {
     @GetMapping(value = "/delete/{id}")
     public String delete(@PathVariable("id")int id){
         studentRepository.deleteById(id);
-        return "redirect:student?success";
+        return "redirect:/student?success";
     }
 
     @GetMapping(value = "/edit/{id}")
     public String edit(@PathVariable("id")int id ,
      Model model){
-
-       model.addAttribute("products", studentRepository.findById(id).get());
+       model.addAttribute("student", studentRepository.findById(id).get());
         return "student/edit";
     }
 

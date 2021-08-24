@@ -7,6 +7,9 @@
         <input type="submit" value="logout">
         </form>
 </div>
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-10 mx-auto">
 <h1 class="text-center">Student Details</h1>
 <div class="container p-6">
     <div class="pull-right">
@@ -54,9 +57,9 @@
                     <td th:text="${contact.qfive}"></td>
                     <td th:text="${contact.qsix}"></td>
                     <td th:text="${contact.secondMidMarks}"></td>
-                    <td><a th:href="@{/student/{id}/edit(id=${contact.id})}"><span
+                    <td><a th:href="@{/student/edit/{id}(id=${contact.id})}"><span
                             class="glyphicon glyphicon-pencil"></span></a></td>
-                    <td><a th:href="@{/student/{id}/delete(id=${contact.id})}"><span
+                    <td><a th:href="@{/student/delete/{id}(id=${contact.id})}"><span
                             class="glyphicon glyphicon-trash"></span></a></td>
                 </tr>
                 </tbody>
@@ -64,4 +67,8 @@
         </div>
     </th:block>
 </div>
+        </div>
+    </div>
+</div>
+
 <div th:replace="shared/footer"></div>
