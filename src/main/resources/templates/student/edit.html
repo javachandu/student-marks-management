@@ -8,11 +8,11 @@
         <div class="form-row">
             <div class="col-md-6 form-group">
                 <label>RollNo</label>
-                <input type="text" class="form-control" th:field="*{rollNo}"/>
+                <input type="text" class="form-control" th:field="*{rollNo}" th:required="required"/>
             </div>
             <div class="col-md-6 form-group">
                 <label>Name</label>
-                <input type="text" class="form-control" th:field="*{name}" />
+                <input type="text" class="form-control" th:field="*{name}" th:required="required" />
             </div>
             <div class="col-md-6 form-group">
                 <label>Phone</label>
@@ -20,7 +20,7 @@
             </div>
             <div class="col-md-6 form-group">
                 <label>Department</label>
-                <select class="form-control" th:field="*{department}">
+                <select class="form-control" th:field="*{department}" th:required="required">
                     <option value="">Choose...</option>
                     <option value="IT">Mechanical</option>
                     <option value="HR">IT</option>
@@ -29,28 +29,28 @@
             </div>
             <div class="col-md-6 form-group">
                 <label>First Mid Question-1</label>
-                <input type="number" step="any" class="form-control" th:field="*{qone}">
+                <input type="number" step="any" class="form-control" th:field="*{qone}" th:required="required">
             </div>
 
             <div class="col-md-6 form-group">
                 <label>First Mid Question-2</label>
-                <input type="text" class="form-control" th:field="*{qtwo}" />
+                <input type="number" class="form-control" th:field="*{qtwo}" th:required="required"/>
             </div>
             <div class="col-md-6 form-group">
                 <label>First Mid Question-3</label>
-                <input type="text" class="form-control" th:field="*{qthree}" />
+                <input type="number" class="form-control" th:field="*{qthree}" th:required="required"/>
             </div>
             <div class="col-md-6 form-group">
                 <label>Second Mid Question-1</label>
-                <input type="text" class="form-control" th:field="*{qfour}" />
+                <input type="number" class="form-control" th:field="*{qfour}" th:required="required"/>
             </div>
             <div class="col-md-6 form-group">
                 <label>Second Mid Question-2</label>
-                <input type="text" class="form-control" th:field="*{qfive}" />
+                <input type="number" class="form-control" th:field="*{qfive}" th:required="required"/>
             </div>
             <div class="col-md-6 form-group">
                 <label>Second Mid Question-3</label>
-                <input type="text" class="form-control" th:field="*{qsix}" />
+                <input type="number" class="form-control" th:field="*{qsix}" th:required="required"/>
             </div>
         </div>
         <input type="hidden" th:field="*{id}">
