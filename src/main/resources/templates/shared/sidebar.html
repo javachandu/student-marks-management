@@ -352,6 +352,13 @@ form.example::after {
             </a>
             <span class="tooltip">File Manager</span>
         </li>
+        <li sec:authorize="hasAuthority('admin')">
+            <a href="/logout">
+                <i class='bx bx-folder'></i>
+                <span class="links_name">Logout</span>
+            </a>
+            <span class="tooltip">logout</span>
+        </li>
     </ul>
     <div class="content">
         <div class="user">
